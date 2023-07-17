@@ -17,14 +17,15 @@ const AddTodoForm = () => {
     <>
       <div id="main-header">
         <div className="container">
-        <AppTitle>Todo Matic</AppTitle>
+          <AppTitle>Todo Matic</AppTitle>
           <h3>Hi there, what needs to be done?</h3>
           <form onSubmit={onSubmit} action="" id="todo-form">
             <input
               type="text"
               name="task-name"
               placeholder="e.g write a book on how to center a div"
-              value={value} // Set the input value
+              value={value}
+              required
               onChange={(e) => setValue(e.target.value)}
               autoFocus
             />
