@@ -14,22 +14,22 @@ const todoSlice = createSlice({
         completed: false,
       };
       state.push(newTodo);
-      localStorage.setItem("todos", JSON.stringify(state)); // Update local storage
+      localStorage.setItem("todos", JSON.stringify(state)); 
     },
     toggleComplete: (state, action) => {
       const index = state.findIndex((todo) => todo.id === action.payload.id);
       state[index].completed = action.payload.completed;
-      localStorage.setItem("todos", JSON.stringify(state)); // Update local storage
+      localStorage.setItem("todos", JSON.stringify(state)); 
     },
     deleteTodo: (state, action) => {
       const newState = state.filter((todo) => todo.id !== action.payload.id);
-      localStorage.setItem("todos", JSON.stringify(newState)); // Update local storage
+      localStorage.setItem("todos", JSON.stringify(newState)); 
       return newState;
     },
     editTodo: (state, action) => {
       const index = state.findIndex((todo) => todo.id === action.payload.id);
       state[index].title = action.payload.title;
-      localStorage.setItem("todos", JSON.stringify(state)); // Update local storage
+      localStorage.setItem("todos", JSON.stringify(state)); 
     },
   },
 });
